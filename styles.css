@@ -164,4 +164,23 @@ footer a:hover {
     header {
         flex-direction: column;
     }
+
+    .top-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .education-list ul {
+        grid-template-columns: 1fr;
+    }
+
+    .job-card {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px;
+    }
+
+    .earlier-experience {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
 }
