@@ -76,10 +76,10 @@ footer a:hover {
 .about-me,
 .technical-skills {
     max-width: 700px;
-    background-color: white;
     padding: 20px;
     margin-top: 30px;
     border-radius: 12px;
+    background-color: white;
     box-shadow: 0 0 8px #4a4063;
 }
 
@@ -118,11 +118,6 @@ footer a:hover {
     margin-top: 0;
 }
 
-.job-details {
-    max-width: 1000px;
-    margin-top: 30px;
-}
-
 .job-card {
     border-radius: 12px;
     padding: 20px;
@@ -130,6 +125,21 @@ footer a:hover {
     margin-left: 20px;
     margin-right: 20px;
     box-shadow: 0 0 8px #bbc2e2;
+}
+
+.job-details {
+    max-width: 1150px;
+    margin: 30px auto 0;
+}
+
+.job-details p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.job-details ul {
+    margin-bottom: 40px;
 }
 
 .earlier-experience {
@@ -175,6 +185,10 @@ footer a:hover {
         gap: 4px;
     }
 
+    .education-credentials h2 {
+        font-size: 30px;
+    }
+
     .education-list ul {
         grid-template-columns: 1fr;
     }
@@ -192,5 +206,13 @@ footer a:hover {
 
     .about-me {
         align-self: stretch;
+    }
+
+    .job-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .job-header h4 {
+        font-size: 0.9rem;
     }
 }
