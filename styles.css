@@ -42,6 +42,43 @@ h2 {
     text-align: center;
 }
 
+.about-me h2::after {
+    content: "";
+    display: block;
+    width: 160px;
+    border-bottom: 6px dotted #bbc2e2;
+    margin: 0 auto 0 60%;
+    transform: translateX(-85px);
+}
+
+.technical-skills h2::after {
+    content: "";
+    display: block;
+    width: 200px;
+    border-bottom: 6px dotted #bbc2e2;
+    margin: 0 auto 0 60%;
+    transform: translateX(-85px);
+}
+
+.professional-experience h2::after {
+    content: "";
+    display: block;
+    width: 280px;
+    border-bottom: 6px dotted #bbc2e2;
+    margin: 4px auto 0 60%;
+    transform: translateX(-150px);
+}
+
+.education-credentials h2::after {
+    content: "";
+    display: block;
+    width: 300px;
+    border-bottom: 6px dotted #bbc2e2;
+    margin: 0 auto 0 60%;
+    transform: translateX(-70px);
+
+}
+
 footer {
     background-color: #bbc2e2;
     max-width: 400px;
@@ -69,6 +106,28 @@ footer a:hover {
     color: #e8ebf7;
 }
 
+footer a:focus-visible {
+    outline: 2px solid #4a4063;
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.footer-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: fit-content;
+    margin: 30px auto;
+}
+
+.footer-decoration:before,
+.footer-decoration:after {
+    content: "";
+    width: 300px;
+    border-top: 10px dotted #bbc2e2;
+}
+
 .centered {
     text-align: center;
 }
@@ -89,6 +148,53 @@ footer a:hover {
     max-width: 1400px;
     margin: auto;
     gap: 40px;
+    align-items: start;
+}
+
+.about-me {
+    align-self: start;
+}
+
+.accordion-button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+
+}
+
+.accordion-button:focus-visible {
+    outline: 2px solid #bbc2e2;
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.job-accordion-button {
+    font-family: inherit;
+    font-size: 1.17em;
+    font-weight: bold;
+    color: black;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.accordion-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.accordion-button[aria-expanded="true"] .accordion-arrow {
+    transform: rotate(90deg);
+}
+
+.hidden {
+    display: none;
 }
 
 .professional-experience {
@@ -106,7 +212,7 @@ footer a:hover {
     background-color: #e8ebf7;
     border-radius: 12px;
     max-width: 525px;
-    padding: 2px 10px 2px 10px;
+    padding: 10px;
     box-shadow: 0 0 5px #bbc2e2;
 }
 
@@ -125,6 +231,12 @@ footer a:hover {
     margin-left: 20px;
     margin-right: 20px;
     box-shadow: 0 0 8px #bbc2e2;
+    width: fit-content;
+    min-width: 550px;
+}
+
+.job-card:has(.job-details:not(.hidden)) {
+    width: auto;
 }
 
 .job-details {
@@ -145,10 +257,6 @@ footer a:hover {
 .earlier-experience {
     margin-left: 40px;
     margin-right: 20px;
-}
-
-.about-me {
-    align-self: center;
 }
 
 .education-credentials {
@@ -175,9 +283,60 @@ footer a:hover {
     grid-template-columns: 1fr 1fr;
 }
 
+@media (hover: hover) {
+    .accordion-button:hover {
+        color: #bbc2e2;
+    }
+}
+
 @media (max-width: 600px) {
     header {
         flex-direction: column;
+    }
+
+    .about-me h2::after {
+        width: 125px;
+        margin: 0 auto;
+        transform: translateX(50px);
+    }
+
+    .technical-skills h2::after {
+        width: 165px;
+        margin: 0 auto;
+        transform: translateX(70px);
+    }
+
+    .professional-experience h2::after {
+        width: 125px;
+        margin: 0 auto;
+        transform: translateX(65px);
+    }
+
+    .education-credentials h2::after {
+        width: 100px;
+        margin: 0 auto;
+        transform: translateX(55px);
+    }
+
+    footer {
+        padding: 12px 8px;
+        gap: 8px;
+        white-space: nowrap;
+    }
+
+    footer img {
+        width: 40px;
+    }
+
+    .footer-decoration {
+        gap: 8px;
+    }
+
+    .footer-decoration:before,
+    .footer-decoration:after {
+        display: block;
+        width: 30px;
+        border-top: 6px dotted #bbc2e2;
     }
 
     .top-sections {
@@ -197,6 +356,9 @@ footer a:hover {
         margin-left: 5px;
         margin-right: 5px;
         padding: 10px;
+        min-width: 0;
+        width: auto;
+        box-sizing: border-box;
     }
 
     .earlier-experience {
